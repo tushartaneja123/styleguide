@@ -1,0 +1,38 @@
+.top-section {
+  margin-bottom: 105px;
+}
+
+@media print {
+  .noPrint {
+    display: none;
+  }
+}depart
+
+.modal-title {
+  font-size: x-large;
+  font-weight: 500;
+  ;
+
+}
+
+.modal button {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+
+}
+
+div p {
+  font-weight: bold;
+}
+
+button {
+  font-size: 14px;
+}
+
+
+.modal button {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+
+
+}

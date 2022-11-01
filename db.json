@@ -1,0 +1,294 @@
+{
+  "getDesignation": [
+    {
+      "desgId": 2,
+      "desgDescEn": "hod finance department",
+      "desgDescHi": "विभागाध्यक्ष वित्त विभाग",
+      "isActive": "Y",
+      "effStartDt": "01/01/21",
+      "effEndDate": "01/01/22"
+    },
+    {
+      "desgId": 3,
+      "desgDescEn": "hod budget department",
+      "desgDescHi": "विभागाध्यक्ष वित्त विभाग",
+      "isActive": "Y",
+      "effStartDt": "01/01/21",
+      "effEndDate": "01/01/22"
+    }
+  ],
+  "getAdminDepartment": [
+    {
+      "adminDeptId": 1,
+      "adminNameEn": "FINANCE DEPARTMENT",
+      "adminNameHi": "पलाश",
+      "isActive": "Y",
+      "effStartDt": "01/01/21",
+      "effEndDate": "11/02/23"
+    },
+    {
+      "adminDeptId": 2,
+      "adminNameEn": "ram",
+      "adminNameHi": "राम",
+      "isActive": "N",
+      "effStartDt": "01/02/21",
+      "effEndDate": "11/03/23"
+    }
+  ],
+  "getDepartment": [
+    {
+      "deptId": 1,
+      "adminDeptId": 1,
+      "adminNameEn": "palash",
+      "adminNameHi": "पलाश",
+      "deptNameEn": "finance department",
+      "deptNameHi": "वित्त विभाग",
+      "hodOfficeId": 10,
+      "officeNameEn": "civil lines",
+      "officeNameHi": "सिविल लाइंस",
+      "deptTypeId": 20,
+      "deptTypeCategory": "vip",
+      "typeofDept": "transport",
+      "isActive": "N",
+      "effStartDt": "11/02/21",
+      "effEndDate": "11/02/23"
+    },
+    {
+      "deptId": 2,
+      "adminDeptId": 2,
+      "adminNameEn": "palash",
+      "adminNameHi": "पलाश",
+      "deptNameEn": "finance department",
+      "deptNameHi": "वित्त विभाग",
+      "hodOfficeId": 11,
+      "officeNameEn": "civil lines",
+      "officeNameHi": "सिविल लाइंस",
+      "deptTypeId": 21,
+      "deptTypeCategory": "vip",
+      "typeofDept": "transport",
+      "isActive": "Y",
+      "effStartDt": "11/02/21",
+      "effEndDate": "11/02/23"
+    }
+  ],
+  "getMajorHead": [
+    {
+      "majorHeadCode": 1000,
+      "majorHeadNameEn": "CGST",
+      "majorHeadNameHi": "sam",
+      "romanName": "CGST",
+      "isActive": "Y",
+      "effStartDt": "11/02/21",
+      "effEndDate": "11/02/23"
+    }
+  ],
+  "getSubMajorHead": [
+    {
+      "majorHeadCode": 1000,
+      "subMajorHeadCode": 10,
+      "subMajorHeadNameEn": "CGST",
+      "subMajorHeadNameHi": "केन्द्रीय वस्तु एवं सेवा कर",
+      "isActive": "N",
+      "effStartDt": "11/02/21",
+      "effEndDate": "11/02/23"
+    }
+  ],
+  "getMinorHead": [
+    {
+      "majorHeadCode": 1000,
+      "subMajorHeadCode": 10,
+      "minorHeadCode": 100,
+      "minorHeadNameEn": "Share of net proceeds assigned to states",
+      "minorHeadNameHi": "राज्यों को समनुदेशित निवल आगमों का हिस्सा",
+      "isActive": "N",
+      "effStartDt": "11/02/21",
+      "effEndDate": "11/02/23"
+    }
+  ],
+  "getSubMinorHead": [
+    {
+      "majorHeadCode": 1000,
+      "subMajorHeadCode": 10,
+      "minorHeadCode": 100,
+      "SubMinorHeadCode": 11,
+      "SubMinorHeadNameEn": "",
+      "SubMinorHeadNameHi": "एकीकृत वस्तु एवं सेवा कर से स्थानांतरण"
+    }
+  ],
+  "getSubGroupHead": [
+    {
+      "budgetHeadId": 6000,
+      "majorHeadCode": 1000,
+      "subMajorHeadCode": 10,
+      "minorHeadCode": 100,
+      "SubMinorHeadCode": 11,
+      "groupSubHeadCode": 51,
+      "groupSubHeadNameEn": "revenue department",
+      "groupSubHeadNameHi": "कर संग्रह",
+      "isActive": "N",
+      "effStartDt": "11/02/21",
+      "effEndDate": "11/02/23"
+    }
+  ],
+  "getBfcDivisionType": [
+    {
+      "bfcDivisionTypeId": 1,
+      "bfcDivisionTypeNameEn": "bfc div type name",
+      "bfcDivisionTypeNameHi": "",
+      "isActive": "Y",
+      "effStartDt": "01/01/21",
+      "effEndDate": "11/02/23"
+    }
+  ],
+  "getExpenditureDivison": [
+    {
+      "bfcDivisionIdNumber": 1,
+      "bfcDivisionNameEn": "bfc division name",
+      "bfcDivisionNameHi": "बीएफसी डिवीजन का नाम",
+      "isActive": "N",
+      "effStartDt": "11/02/21",
+      "effEndDate": "11/02/23"
+    }
+  ],
+  "requestedPayload": {
+    "departmentData": {
+      "departmentName": "tst",
+      "adminDeptId": 1,
+      "adminDeptName": "FINANCE DEPARTMENT",
+      "designationId": "2",
+      "designationName": "hod finance department"
+    },
+    "bcoData": {
+      "bcoName": "",
+      "departmentName": "tst",
+      "majorHead": "",
+      "subMajorHead": "",
+      "minorHead": "",
+      "subMinorHead": "",
+      "groupHead": ""
+    },
+    "remarks": [
+      {
+        "assignmentId": 1,
+        "comment": "test 2",
+        "timestamp": "Fri Aug 05 2022 2:43:49 PM"
+      }
+    ],
+    "documentDetails": {
+      "assignmentId": 1,
+      "timestamp": "Fri Aug 05 2022 2:43:49 PM",
+      "document": [
+        {
+          "id": 2,
+          "name": "gift-box.gif",
+          "docDescription": "desc1"
+        }
+      ]
+    },
+    "sentStatus": "yes"
+  },
+  "AssignInfo": [
+    {
+      "Aid": 143,
+      "AType": 100,
+      "AValue": 1452,
+      "role_id": "1",
+      "role_Desc": "DDO"
+    }
+  ],
+  "departmentData": [
+    {
+      "departmentName": "",
+      "adminDeptId": "",
+      "adminDeptName": "",
+      "designationId": "",
+      "designationName": ""
+    }
+  ],
+  "bcoData": [
+    {
+      "bcoName": "",
+      "departmentID": "",
+      "departmentName": ""
+    }
+  ],
+  "bfcUnitData": [
+    {
+      "bfcUnitName": "",
+      "bfcTypeId": "",
+      "bfcTypeName": "",
+      "expenditureDivId": "",
+      "expenditureDivName": "",
+      "budgetHeadId": "",
+      "budgetHeadCode": ""
+    }
+  ],
+  "documentDetails": {
+    "departmentData": {
+      "departmentName": "department of finance",
+      "adminDeptId": 1,
+      "adminDeptName": "FINANCE DEPARTMENT",
+      "designationId": "2",
+      "designationName": ""
+    },
+    "bcoData": {
+      "bcoName": "new bco",
+      "departmentName": "department of finance",
+      "majorHead": "1000",
+      "subMajorHead": "10",
+      "minorHead": "100",
+      "subMinorHead": "100",
+      "groupHead": "51"
+    },
+    "remarks": [
+      {
+        "assignmentId": 1,
+        "comment": "vaishnavi pic",
+        "timestamp": "Thu Aug 04 2022 23:23:05"
+      }
+    ],
+    "documentDetails": {
+      "assignmentId": 1,
+      "timestamp": "Thu Aug 04 2022 23:23:05",
+      "document": [
+        {
+          "id": 0,
+          "name": "My project.png",
+          "docDescription": "new document"
+        }
+      ]
+    },
+    "sentStatus": "no"
+  },
+  "session":{
+    "wfProcessId":null,
+    "userInfo": {
+      "userId": 101, 
+      "loginId": "IFMS.TEST",
+      "lastLogonDate": null,
+      "sso_mail_id": null,
+      "mobile_number": null,
+      "sso_mobile_no": null,
+      "user_name": null, 
+      "sso_user_name": null,
+      "email_id": null,
+      "ssoId": "IFMS.TEST",
+      "finYearId": 1,
+      "finYear": null,
+      "finYearType": null,
+      "app_module_ID": 1
+    },
+    "AssignInfo": 
+      {
+        "Aid": 1001,  
+        "AType": "officeid",
+        "AValue": 1452,   
+        "role_id": "1", 
+        "role_Desc": "DDO" 
+      }
+  }
+
+
+
+
+}

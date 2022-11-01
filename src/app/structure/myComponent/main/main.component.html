@@ -1,0 +1,136 @@
+<div class="col-12 p-0">
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a routerLink="/Login"><i class="fa fa-home"></i> Login</a></li>
+			<li class="breadcrumb-item active"><a>Menu</a></li>
+
+		</ol>
+	</nav>
+</div>
+<!-- End #main -->
+<section id="contact" class="contact mt-5">
+	<div class="container">
+		<div class="justify-content-between">
+			<div class="row ">
+				<div class="login-form col-lg-4">
+					<!-- <div class="row bg-warning ps-0 p-2">
+						<div class="col-lg-8 text-start">
+							<h3 class="mb-1"><b>Office Management </b></h3>
+						</div>
+						<div class="col-lg-4" (click)="officeMgnt()">
+							<button class="btn btn-transparent border border-white btn-sm" >
+								<span class="bi bi-plus-circle font-weight-bold"></span>
+							</button>
+						</div>
+					</div> -->
+					<div class="brand-content wow fadeIn animated yellow" data-wow-duration="700ms"
+						data-wow-delay="300ms"
+						style="visibility: visible; animation-duration: 700ms; animation-delay: 300ms; animation-name: fadeIn; margin: 0!important;">
+						<div class="media-body txt scrool-message features">
+							<div class="row mb-2">
+								<div class="col-lg-8">
+									<h3 class="mb-1"><b>Office Management </b></h3>
+								</div>
+								<!-- <div class="col-lg-4 text-center text-white">
+									<button class="btn btn-transparent border border-white btn-sm" >
+										<span class="bi bi-plus-circle font-weight-bold"></span>
+									</button>
+								</div> -->
+							</div>
+
+							<div class="row aos-init aos-animate" data-aos="fade-left">
+								<div class="col-lg-12 col-md-12 mb-1" (click)="getWorkFlowId()">
+									<div class="icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+										<i class="fas fa fa-address-book"></i>
+										<h3><a>Department Creation</a></h3>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12 mb-1">
+									<div class="icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">
+										<i class="ri-calendar-todo-line"></i>
+										<h3><a>Office Creation</a></h3>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12 mb-1">
+									<div class="icon-box aos-init" data-aos="zoom-in" data-aos-delay="200"> <i
+											class="ri-paint-brush-line"></i>
+										<h3><a>Split & Merge Office</a></h3>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12 mb-1">
+									<div class="icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="250">
+										<i class="bi bi-cash-stack"></i>
+										<h3><a>Modify Office</a></h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="login-form  col-lg-4">
+					<div class="brand-content wow fadeIn animated yellow" data-wow-duration="700ms"
+						data-wow-delay="300ms"
+						style="visibility: visible; animation-duration: 700ms; animation-delay: 300ms; animation-name: fadeIn;  margin: 0!important;">
+						<div class="media-body txt scrool-message features">
+							<h3 class="mb-1"><b>Post Management</b></h3>
+							<div class="row aos-init aos-animate" data-aos="fade-left">
+								<div class="col-lg-12 col-md-12 mb-1">
+									<div class="icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+										<i class="ri-bar-chart-box-line"></i>
+										<h3><a>Post & Designation Creation
+											</a></h3>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12 mb-1">
+									<div class="icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">
+										<i class="ri-calendar-todo-line"></i>
+										<h3><a>Post Distribution</a></h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="login-form  col-lg-4">
+					<div class="brand-content wow fadeIn animated yellow" data-wow-duration="700ms"
+						data-wow-delay="300ms"
+						style="visibility: visible; animation-duration: 700ms; animation-delay: 300ms; animation-name: fadeIn; margin: 0!important;">
+						<div class="media-body txt scrool-message features">
+							<h3 class="mb-1"><b>Task List</b></h3>
+							<div class="row aos-init aos-animate" data-aos="fade-left">
+								<div class="col-lg-12 col-md-12 mb-1">
+									<div class="icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+										<i class="fa-solid fa  fa-inbox"></i>
+										<h3 matBadge="{{count.inboxCount}}" matBadgePosition="after"
+											matBadgeSize="medium" matBadgeOverlap="false"><a
+												href="/Menu/Inbox">Inbox</a>
+										</h3>
+									</div>
+								</div>
+
+								<div class="col-lg-12 col-md-12 mb-1">
+									<div class="icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">
+										<i class="ri-calendar-todo-line"></i>
+										<h3 matBadge="{{count.outboxCount}}" matBadgePosition="after"
+											matBadgeSize="medium" matBadgeOverlap="false"><a
+												routerLink="/Menu/Outbox">Outbox</a></h3>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12 mb-1">
+									<div class="icon-box aos-init" data-aos="zoom-in" data-aos-delay="200"> <i
+											class="ri-paint-brush-line"></i>
+										<h3 matBadge="{{count.draftCount}}" matBadgePosition="after"
+											matBadgeSize="medium" matBadgeOverlap="false"><a
+												routerLink="/Menu/Drafts">Drafts</a>
+										</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- ======= Footer ======= -->

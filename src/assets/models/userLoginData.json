@@ -1,0 +1,27 @@
+{
+    "wfProcessId":null,
+    "userInfo": {
+      "userId": 101, 
+      "loginId": "IFMS.TEST",
+      "lastLogonDate": null,
+      "sso_mail_id": null,
+      "mobile_number": null,
+      "sso_mobile_no": null,
+      "user_name": null, 
+      "sso_user_name": null,
+      "email_id": null,
+      "ssoId": "IFMS.TEST",
+      "finYearId": 1,
+      "finYear": null,
+      "finYearType": null,
+      "app_module_ID": 1
+    },
+    "AssignInfo": 
+      {
+        "Aid": 1001,  
+        "AType": "officeid",
+        "AValue": 1452,   
+        "role_id": "1", 
+        "role_Desc": "DDO" 
+      }
+  }

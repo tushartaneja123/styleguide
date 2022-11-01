@@ -1,0 +1,26 @@
+.content.tx p {
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.col-md-12.form-group.text-center.pt-2 {
+    max-height: 30%;
+    overflow: auto;
+    font-size: 20px;
+    color: #f50000;
+}
+.modal-title.w-100 {
+    margin-top: 18px;
+}
+.modal-footer.justify-content-center {
+    border-color: red;
+}
+button.btn-close {
+    position: relative;
+    top: -17px;
+}
+.modal-header.text-center {
+    border-style: none;
+}

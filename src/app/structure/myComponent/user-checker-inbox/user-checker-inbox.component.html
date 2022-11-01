@@ -1,0 +1,92 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 m-0 p-0">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><i class="fa text-primary fa-home"></i><a routerLink="/Login">Login</a>
+                    </li>
+                    <li class="breadcrumb-item"><a routerLink="/Main">Menu</a></li>
+                    <li class="breadcrumb-item active" aria-current="Inbox" aria-label="Current Page">Inbox</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
+<section id="contact" class="contact  mb-5">
+
+    <div class="container-fluid mt-2 col-md-12 section-bg">
+        <div class="row mb-5">
+
+
+
+            <div class="row  p-2 pb-0 position-relative">
+                <div class="col-md-12 form-group" style="position:relative">
+                    <div class="row p-2 pb-0 mb-0">
+                        <div class="section-title aos-init aos-animate col-md-10 pb-0 mb-0" data-aos="fade-up">
+                            <p class="m-0 pt-4 ">Inbox</p>
+                        </div>
+                        <mat-form-field appearance="standard" [hidden]="noData" class="p-0 col-md-2">
+                            <mat-label>Search</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" class="form-control-sm"
+                                placeholder="Enter something to search" #input>
+                        </mat-form-field>
+                    </div>
+                    <div style="overflow-x:auto;">
+                        <table mat-table [dataSource]="dataSource" matSort matSortActive="createdDate"
+                            matSortDirection="desc" matSortDisableClear class=" w-100" [hidden]="noData"
+                            style="overflow-x:auto;" class="table-hover">
+
+
+                            <ng-container *ngFor="let header of columnHeaders;let i=index;"
+                                matColumnDef="{{displayedColumns[i]}}">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ columnHeaders[i]}}
+                                </th>
+                                <td mat-cell *matCellDef="let row">
+                                    {{getValue(row[displayedColumns[i]],displayedColumns[i])}}
+                                </td>
+                            </ng-container>
+
+
+                            <ng-container matColumnDef="action">
+                                <th mat-header-cell *matHeaderCellDef>Action</th>
+                                <td mat-cell *matCellDef="let row"><button (click)="redirect(row)"
+                                        class="btn btn-primary btn-md  text-decoration-none"
+                                        style="padding:5px 20px !important;"><a class="text-white">View</a></button>
+                                </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                            <tr class="mat-row" *matNoDataRow class="w-100">
+                                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"
+                                </td>
+                            </tr>
+                        </table>
+
+
+                    </div>
+
+
+                    <div [hidden]="noData">
+                        <mat-paginator [pageSizeOptions]="[5,10,15,25,100]" [pageSize]="5"
+                            aria-label=" Paginator to select paged Data"></mat-paginator>
+
+                    </div>
+                </div>
+            </div>
+            <app-no-data-error [hidden]="!noData"></app-no-data-error>
+            <div class="pt-2 pb-2 text-center mt-3 mb-5">
+                <button type="button" class="btn btn-primary btn-sm w-10"><a href="/Main"
+                        class="text-white text-decoration-none"><b>Back to Menu</b></a></button>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<!--============= end datatable=============== -->

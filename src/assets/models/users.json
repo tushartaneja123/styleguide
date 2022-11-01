@@ -1,0 +1,242 @@
+[
+  {
+    "user": "Admin Maker",
+    "role": "",
+    "department": "Admin Department",
+    "designation": "",
+    "sessionData": {
+      "wfProcessId": 1,
+      "userInfo": {
+        "userId": "101",
+        "user_name": "Animesh",
+        "sso_user_name": null,
+        "email_id": null,
+        "loginId": "IFMS.TEST",
+        "lastLogonDate": null,
+        "sso_mail_id": null,
+        "mobile_number": null,
+        "sso_mobile_no": null,
+        "ssoId": "IFMS.TEST",
+        "finYearId": 1,
+        "finYear": null,
+        "finYearType": null,
+        "app_module_ID": 1
+      },
+      "AssignInfo":
+      {
+        "Aid": "1001",
+        "AType": 1,
+        "AValue": "72",
+        "DepartmentType": "Admin",
+        "role_id": "100",
+        "role_Desc": "Maker"
+      }
+    }
+  },
+  {
+    "user": "Admin Checker",
+    "role": "",
+    "department": "Admin Department",
+    "designation": "",
+    "sessionData": {
+      "wfProcessId": 1,
+      "userInfo": {
+        "userId": "102",
+        "user_name": "Priti",
+        "sso_user_name": null,
+        "email_id": null,
+        "loginId": "IFMS.TEST",
+        "lastLogonDate": null,
+        "sso_mail_id": null,
+        "mobile_number": null,
+        "sso_mobile_no": null,
+        "ssoId": "IFMS.TEST",
+        "finYearId": 1,
+        "finYear": null,
+        "finYearType": null,
+        "app_module_ID": 1
+      },
+      "AssignInfo":
+      {
+        "Aid": "1002",
+        "AType": 1,
+        "AValue": "72",
+        "DepartmentType": "Admin Department",
+        "role_id": "200",
+        "role_Desc": "Checker"
+      }
+    }
+  },
+  {
+    "user": "Admin Approver",
+    "role": "",
+    "department": "Admin Department",
+    "designation": "",
+    "sessionData": {
+      "wfProcessId": 1,
+      "userInfo": {
+        "userId": "103",
+        "user_name": "Ravi",
+        "sso_user_name": null,
+        "email_id": null,
+        "loginId": "IFMS.TEST",
+        "lastLogonDate": null,
+        "sso_mail_id": null,
+        "mobile_number": null,
+        "sso_mobile_no": null,
+        "ssoId": "IFMS.TEST",
+        "finYearId": 1,
+        "finYear": null,
+        "finYearType": null,
+        "app_module_ID": 1
+      },
+      "AssignInfo":
+      {
+        "Aid": "1003",
+        "AType": 1,
+        "AValue": "72",
+        "DepartmentType": "Admin Department",
+        "role_id": "300",
+        "role_Desc": "Approver"
+      }
+    }
+  },
+  {
+    "user": "FD Expenditure Maker",
+    "role": "",
+    "department": "Finance Department - Expenditure",
+    "designation": "",
+    "sessionData": {
+      "wfProcessId": 1,
+      "userInfo": {
+        "userId": "104",
+        "user_name": "Shashi Kumar",
+        "sso_user_name": null,
+        "email_id": null,
+        "loginId": "IFMS.TEST",
+        "lastLogonDate": null,
+        "sso_mail_id": null,
+        "mobile_number": null,
+        "sso_mobile_no": null,
+        "ssoId": "IFMS.TEST",
+        "finYearId": 1,
+        "finYear": null,
+        "finYearType": null,
+        "app_module_ID": 1
+      },
+      "AssignInfo":
+      {
+        "Aid": "2001",
+        "AType": "Finance",
+        "AValue": "72",
+        "DepartmentType": "Finance Department",
+        "role_id": "2001",
+        "role_Desc": "FD Maker"
+      }
+    }
+  },
+  {
+    "user": "FD Expenditure Approver",
+    "role": "",
+    "department": "Finance Department - Expenditure",
+    "designation": "",
+    "sessionData": {
+      "wfProcessId": 1,
+      "userInfo": {
+        "userId": "104",
+        "user_name": "Prakash Raj",
+        "sso_user_name": null,
+        "email_id": null,
+        "loginId": "IFMS.TEST",
+        "lastLogonDate": null,
+        "sso_mail_id": null,
+        "mobile_number": null,
+        "sso_mobile_no": null,
+        "ssoId": "IFMS.TEST",
+        "finYearId": 1,
+        "finYear": null,
+        "finYearType": null,
+        "app_module_ID": 1
+      },
+      "AssignInfo":
+      {
+        "Aid": "2002",
+        "AType": "Finance",
+        "AValue": "72",
+        "DepartmentType": "Finance Department",
+        "role_id": "2002",
+        "role_Desc": "FD Checker"
+      }
+    }
+  },
+  {
+    "user": "FD Expenditure Approver",
+    "role": "",
+    "department": "Finance Department - Expenditure",
+    "designation": "",
+    "sessionData": {
+      "wfProcessId": 1,
+      "userInfo": {
+        "userId": "104",
+        "user_name": "Raman Raj",
+        "sso_user_name": null,
+        "email_id": null,
+        "loginId": "IFMS.TEST",
+        "lastLogonDate": null,
+        "sso_mail_id": null,
+        "mobile_number": null,
+        "sso_mobile_no": null,
+        "ssoId": "IFMS.TEST",
+        "finYearId": 1,
+        "finYear": null,
+        "finYearType": null,
+        "app_module_ID": 1
+      },
+      "AssignInfo":
+      {
+        "Aid": "2003",
+        "AType": "Finance",
+        "AValue": "72",
+        "DepartmentType": "Finance Department",
+        "role_id": "2003",
+        "role_Desc": "FD Maker"
+      }
+    }
+  },
+  {
+    "user": "Budget Maker",
+    "role": "",
+    "department": "FD Budget",
+    "designation": "",
+    "sessionData": {
+      "wfProcessId": 1,
+      "userInfo": {
+        "userId": "104",
+        "user_name": "FD Budget Maker",
+        "sso_user_name": null,
+        "email_id": null,
+        "loginId": "IFMS.TEST",
+        "lastLogonDate": null,
+        "sso_mail_id": null,
+        "mobile_number": null,
+        "sso_mobile_no": null,
+        "ssoId": "IFMS.TEST",
+        "finYearId": 1,
+        "finYear": null,
+        "finYearType": null,
+        "app_module_ID": 1
+      },
+      "AssignInfo":
+      {
+        "Aid": "3001",
+        "AType": "Finance",
+        "AValue": "72",
+        "DepartmentType": "Finance Department",
+        "role_id": "2001",
+        "role_Desc": "FD Budget Maker"
+      }
+    }
+  }
+
+
+]

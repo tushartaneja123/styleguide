@@ -1,0 +1,35 @@
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hero,
+#header,
+#hero {
+    display: block !important;
+}
+
+#header.header-transparent {
+    background: transparent;
+}
+
+li a :hover {
+    text-decoration: underline;
+
+}
+
+.breadcrumb,
+.breadcrumbs {
+    display: block !important;
+    width: 100%;
+}
+
+#navbar ul li:last-child {
+    display: block !important;
+}
+
+#breadcrumb,
+.breadcrumbs {
+    display: block !important;
+    width: 100%;
+}

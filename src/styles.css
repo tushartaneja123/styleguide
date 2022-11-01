@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+
+fieldset {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+fieldset legend {
+  float: none;
+  width: auto;
+  padding: 8px;
+}
+
+button {
+  border-radius: 0px;
+  margin-left: 20px;
+}
+
+.card {
+  border-radius: 0px;
+  border: 0px;
+}
+
+.card-header,
+.card-footer {
+  padding: 10px;
+  background-color: transparent;
+}
+
+/* zoom effeect css */
+* {
+  box-sizing: border-box;
+}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 300px;
+  height: 300px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

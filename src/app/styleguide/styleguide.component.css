@@ -1,0 +1,346 @@
+.w-100
+{
+    width: 100%;
+}
+/*-----------------------------*/
+           /*FONTS */
+/*-----------------------------*/
+body,.btn
+{
+    font-family: Lato!important;
+}
+h1, h2, h3, h4, h5, h6
+{
+    font-family: Poppins!important;
+    font-weight: 600;
+}
+.f-16
+{
+    font-size: 16px;
+}
+.f-14
+{
+    font-size: 14px;
+}
+.f-12
+{
+    font-size: 12px;
+}
+/*-----------------------------*/
+    /*Components - COLORS */
+/*-----------------------------*/
+.primary-color
+{
+    color: #231E60;
+}
+.secondary-color
+{
+    color: #3584CF;
+}
+.primary-black-color
+{
+    color: #000000;
+}
+.charcoal-black-color
+{
+    color: #333333;
+}
+.light-black-color
+{
+    color: #333333;
+}
+.light-gray-color
+{
+    color: #F8F8F8;
+}
+.golden-bg
+{
+    background: linear-gradient(#E2A50F, #F5EE48);
+}
+.sky-bg
+{
+    background-image: linear-gradient(#2471bc, #3584cf);
+}
+.primary-bg
+{
+    color: #231E60;
+}
+.secondary-bg
+{
+    color: #3584CF;
+}
+.warn-color
+{
+    color: #dd3030;
+}
+success-color
+{
+    color: #189d2d;
+}
+/*-----------------------------*/
+    /*Components - BUTTONS */
+/*-----------------------------*/
+.btn{
+    padding: 2px 30px!important;
+    border-radius: .2rem;
+    border: none;
+}
+.btn-primary,.btn-outline-primary:hover{
+    background-color: #231E60;    
+    color: #fff;    
+}
+.btn-primary:hover{
+    background-color: #1B1D94; 
+}
+.btn-secondary,.btn-outline-secondary:hover{
+    background-color: #3584CF;
+    color: #fff;
+}
+.btn-secondary:hover{
+    background-color: #3B91E3; 
+}
+.btn-tertiary,.btn-outline-tertiary:hover
+{
+    background-color: #F0CA1B;
+    color: #000;
+}
+.btn-outline-primary{
+    border: 1px solid #231E60;
+    color: #231E60;
+}
+.btn-outline-secondary{
+    border: 1px solid #3584CF;
+    color: #3584CF;
+}
+.btn-outline-tertiary
+{
+    border: 1px solid #F0CA1B;
+    color: #F0CA1B;
+}
+.btn-link-primary
+{
+    color: #231E60;
+}
+.btn-link-secondary
+{
+    color: #3584CF;
+}
+.radio-btn
+{
+    font-size: 16px;
+}
+.form-check-input:focus
+{
+background-color: #231E60;
+}
+.btn-success
+{
+    background-color: #189d2d;
+    color: #fff;
+}
+.btn-danger
+{
+    background-color: #dd3030;
+}
+/*-----------------------------*/
+    /*Components - SWITCH */
+/*-----------------------------*/
+.switch
+{
+    background-color: #F5F5FF;
+    padding: 5px;
+    width: fit-content;
+    border-radius: 5px;
+}
+.switch .nav-link
+{
+    color: #231E60;
+}
+.switch .nav-pills .nav-link.active, .nav-pills .show>.nav-link
+{
+    background-color: #231E60!important;
+    color: #fff;
+}
+/*-----------------------------*/
+    /*Components - CHIPS */
+/*-----------------------------*/
+.chip
+{
+    background-color: #F5F5FF;
+    padding: 7px 14px;
+    border-radius: 50px;
+}
+
+/*-----------------------------*/
+  /*Components - PAGINATION */
+/*-----------------------------*/
+.pagination-circle .page-link {
+    border-radius: 50%;
+    padding: 10px 15px;
+}
+.left-arrow,.right-arrow
+{
+    padding: 0px 12px;
+}
+.pagination .page-item.active .page-link
+{
+    background-color: #231E60;
+    border:1px solid #231E60;
+    color: #fff;
+}
+.pagination .page-item.active .page-link:hover
+{
+    background-color: #1B1D94;
+    border:1px solid #231E60;
+    color: #fff!important;
+}
+.pagination .page-link
+{
+    color: #231E60;
+}
+.pagination li a img
+{
+    width: 12px;
+}
+.pagination .page-link:hover
+{
+    color: #1B1D94!important;
+}
+/*-----------------------------*/
+  /*Components - SEARCH BOX*/
+/*-----------------------------*/
+.Search-btn-position
+{
+    position: absolute;
+    right: 7px;
+    top: 10px;
+}
+/*-----------------------------*/
+  /*Components - HEADER*/
+/*-----------------------------*/
+#header
+{
+ z-index: 1000000!important;
+}
+/*-----------------------------*/
+  /*Components - TABLE*/
+/*-----------------------------*/
+table .thead-light
+{
+    background-color: #f5f5ff !important;
+}
+.table .thead-light th
+{
+    background-color: #f5f5ff !important;
+    color: #000;
+    border: none;
+}
+.table>:not(:first-child)
+{
+    border: none;
+}
+table
+{
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+.table>:not(caption)>*>*
+{
+    border-bottom-color: #dddddd;
+}
+/*-----------------------------*/
+  /*Components - BREADCRUMBS*/
+/*-----------------------------*/
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 0.25rem;
+    content: "→";
+}
+.breadcrumb-item+.breadcrumb-item::before {
+    float: left;
+    padding: 10px!important;
+    color: var(--bs-breadcrumb-divider-color);
+    content: none!important;
+}
+.breadcrumb .breadcrumb-item a
+{
+ color: #3584CF!important;
+ text-decoration: none;
+ font-weight: 500!important;
+}
+.breadcrumb
+{
+ padding: 15px;
+ border-radius: 5px;
+ background-color: #F8F8F8!important;
+}
+li.breadcrumb-item
+{
+ padding: 5px!important;
+ font-weight: 500!important;
+}
+/*-----------------------------*/
+     /*Components - CARD*/
+/*-----------------------------*/
+.card{
+    background-image: linear-gradient(to right, #ffffff, #e9e9e9);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    
+.square-card
+{
+    padding: 20px 0px;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    vertical-align: middle;
+}
+.square-card .content
+{
+    
+    position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+    
+}
+.rectangular-card img
+{
+   width: 18px;
+}
+/*-----------------------------*/
+   /*Components - ACCORDION*/
+/*-----------------------------*/
+.accordion
+{
+    background-color: #f5f5ff;
+    padding: 15px;
+}
+.card_accordion
+{
+    border-radius: 5px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+/*-----------------------------*/
+    /*Components - PROGRESSBAR*/
+/*-----------------------------*/
+.progres-bar
+{
+
+}
+.progres-bar:hover
+{
+
+}
+.progres-bar:active
+{
+
+}

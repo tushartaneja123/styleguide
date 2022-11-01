@@ -1,0 +1,9 @@
+<div id="breadcrumb" class="col-xs-12 col-sm-12 p-0">
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li [ngClass]="(isLast==true?'breadcrumb-item active' :'breadcrumb-item')"
+				*ngFor="let link of links;let isLast=last"><a routerLink="{{link.url}}"><i
+						class="{{link.iconClass}} active"></i>&nbsp;{{link.text}}</a></li>
+		</ol>
+	</nav>
+</div>

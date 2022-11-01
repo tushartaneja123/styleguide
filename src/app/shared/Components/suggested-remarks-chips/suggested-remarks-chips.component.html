@@ -1,0 +1,6 @@
+<label class="form-control-label">{{label}}</label>
+<mat-chip-list aria-label="Suggested Remarks List for quick entering">
+    <mat-chip (click)="setRemark(r)" *ngFor="let r of options" ariaSelected=`${r}` aria-label=`${r}`>
+        {{r}}
+    </mat-chip>
+</mat-chip-list>

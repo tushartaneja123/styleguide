@@ -1,0 +1,25 @@
+{
+    "Department Name":"xyz",
+    "AdministrativeDepartment":"Finance Department",
+    "DesignationofHOD": "Additional Director",
+    "ifExistingBCO":"",
+    
+    "BCODetails":[
+    {"BCOName" :"Director, Treasuries & Account",
+     "BudgetHead" :"9873462018911"
+    }
+    ],
+    
+    "DOCUmentdetailes":[
+        {
+            "SrNo" :"1",
+            "FileName" :"Document.pdf",
+            "Initiator" :"Admin Maker",
+            "Description" :"Department Creation"
+            
+        }
+    ],
+    
+    "Remarks": "Remark Request Created & forwarded to next level for verification"
+    }
+    

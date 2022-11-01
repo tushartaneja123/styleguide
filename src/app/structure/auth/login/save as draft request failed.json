@@ -1,0 +1,64 @@
+{
+    "request_data": {
+        "processId": "1",
+        "taskSeq": "",
+        "processTaskSeq": "",
+        "taskTranId": "3050",
+        "requestId": "2482",
+        "requestDesc": "DRAFT from Checker",
+        "initiator": "1002",
+        "person_id": "102",
+        "person_name": "Animesh",
+        "action": "DRAFT",
+        "remarks": "Modified the request 2482 - test ",
+        "adminDeptId": 72,
+        "division": "3",
+        "assignmentId": "1002"
+    },
+    "payload": {
+        "departmentData": {
+            "departmentName": "Test Department One ",
+            "departmentNameEng": "Test Department One ",
+            "departmentNameHi": "परीक्षण विभाग एक",
+            "adminDeptId": 72,
+            "adminDeptName": "Indira Gandhi Nahar Department, Jaipur",
+            "adminDeptNameHi": "इन्दिरा गान्धी नहर विभाग, जयपुर",
+            "designationId": "",
+            "designationName": ""
+        },
+        "bcoData": {
+            "bcoName": "",
+            "departmentID": "",
+            "departmentName": ""
+        },
+        "bfcUnitData": {
+            "bfcUnitName": "",
+            "bfcTypeId": "",
+            "bfcTypeName": "",
+            "expenditureDivId": "3",
+            "expenditureDivName": "Expenditure Division 3",
+            "budgetHeadId": "",
+            "budgetHeadCode": ""
+        },
+        "remarks": [
+            {
+                "assignmentId": "",
+                "comment": "",
+                "timestamp": ""
+            }
+        ],
+        "documentDetails": [
+            {
+                "document": [
+                    {
+                        "timeStamp": "Wed Aug 31 2022 6:22:16 PM",
+                        "name": "approval.txt.txt",
+                        "description": "Approval Letter",
+                        "id": 948322,
+                        "assignmentId": "1001"
+                    }
+                ]
+            }
+        ]
+    }
+}

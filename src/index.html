@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>IFMS - Department of Finance | Government of Rajasthan</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet" />
+    <!-- Vendor CSS Files -->
+    <!-- <link href="assets/vendor/aos/aos.css" rel="stylesheet" type="text/plain" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link href="assets/maine-css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/maine-css/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/maine-css/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/maine-css/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/maine-css/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/maine-css/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/maine-css/css/style.css" rel="stylesheet" />
+
+    <script src="assets/maine-css/vendor/jquery.min.js"></script>
+    <!-- <script src="dist\pilot-projectjquery1.min.js"></script> -->
+
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+    <script>
+      function myFunction() {
+        alert("hi");
+      }
+      window.onunload = function () { alert("hi"); };
+    </script>
+  </head>
+
+  <body class="mat-typography">
+    <app-root></app-root>
+
+
+
+
+
+    <!-- End Footer -->
+    <a class="back-to-top d-flex align-items-center justify-content-center" onclick="topFunction()" id="myBtn"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+
+    <div id="preloader"></div>
+
+
+
+
+    <!-- ============= Scroll bottom to top section=========== -->
+
+    <script>
+      //Get the button
+      var mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () { scrollFunction() };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+
+
+
+    <script>
+      window.onbeforeunload = function () {
+        alert("ok");
+      };
+    </script>
+
+
+    <!-- sidebar  menu -->
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "285px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+    <!-- end sidbar menu -->
+
+
+
+    <!-- scroll bottom to  top  -->
+    <script>
+      $(window).on("scroll", function () {
+        if ($(window).scrollTop() > 10) {
+          $(".header").addClass("active");
+        } else {
+          //remove the background property so it comes transparent again (defined in your css)
+          $(".header").removeClass("active");
+        }
+      });
+    </script>
+    <!-- end scrool bottom to top -->
+
+
+    <!-- ==============end prient section================ -->
+    <script>
+      function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+      }
+    </script>
+
+
+
+    <!--  zoom in and zoomout  -->
+    <script type="text/javascript">
+      $(function () {
+
+        $(".font-button").bind("click", function () {
+          var size = parseInt($('body,td').css("font-size"));
+          if ($(this).hasClass("plus")) {
+            size = size + 2;
+          } else {
+            size = size - 2;
+            if (size <= 10) {
+              size = 10;
+            }
+          }
+          $('body, td').css("font-size", size);
+        });
+
+      });
+    </script>
+
+    <!-- ==============end prient section================ -->
+
+    <!-- <script
+    src="https://bootstrapmade.com/demo/templates/Bootslander/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="https://bootstrapmade.com/demo/templates/Bootslander/assets/vendor/aos/aos.js"></script> -->
+    <script
+      src="https://bootstrapmade.com/demo/templates/Bootslander/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://bootstrapmade.com/demo/templates/Bootslander/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script
+      src="https://bootstrapmade.com/demo/templates/Bootslander/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script
+      src="https://bootstrapmade.com/demo/templates/Bootslander/assets/vendor/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="https://bootstrapmade.com/demo/templates/Bootslander/assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+
+
+
+
+  </body>
+
+</html>

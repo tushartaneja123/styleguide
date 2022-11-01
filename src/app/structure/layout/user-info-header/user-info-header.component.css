@@ -1,0 +1,6 @@
+.breadcrumb.card {
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    font-weight: 620;
+    z-index: 0;
+}

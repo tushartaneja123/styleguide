@@ -1,0 +1,90 @@
+input,
+select,
+textarea,
+.card {
+    border-radius: 0px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* fieldset{
+    background-color: beige;
+} */
+
+.docImage {
+
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+
+form.ng-untouched.ng-pristine.ng-invalid {
+    margin-top: 40px;
+}
+
+.mb-5 {
+    margin-bottom: 7rem !important;
+}
+
+.modal-content {
+    padding: 35px;
+    text-align: center;
+}
+
+.modal button {
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.content h3 {
+    color: #f50000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+label {
+    padding-top: 7px;
+}
+
+.lang-hindi {
+    font-family: hindi !important;
+}
+
+fieldset {
+    margin: 0px;
+    padding: 0px;
+}
+
+hr {
+    margin: 8px 0px 16px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+div p a {
+    font-weight: bold;
+}
+
+.modal-title {
+    font-size: x-large !important;
+    font-weight: 500;
+}
+
+.modal button {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+
+
+}

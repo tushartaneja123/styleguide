@@ -1,0 +1,312 @@
+<app-breadcrumb [links]="breadcrumb"></app-breadcrumb>
+
+
+
+<section class="top-section pb-5 " id=" printSectionId" style="margin-top: 25px !important;overflow:visible" id="print">
+
+  <div class="container section-bg position-relative">
+    <!-- Department Deatils -->
+    <!-- table document -->
+
+    <div class="pb-5" style="position:absolute;top:30px;right: 50px;">
+
+      <h3 style="color:#1a1d94;"><b><i class="fa fa-solid fa-file"></i> Request Id {{requestId1}}
+        </b></h3>
+    </div>
+
+    <div id="printableData">
+      <div class="section-title aos-init aos-animate pt-4" data-aos="fade-up">
+        <p>Department Details</p>
+      </div>
+      <hr>
+      <div class="row p-2">
+        <div class="col-lg-3">
+          <p>Administrative Department</p>
+        </div>
+        <div class="col-lg-3">
+          <label>{{pageData["departmentData"].adminDeptName}}</label>
+        </div>
+        <div class="col-lg-3">
+          <p>प्रशासनिक विभाग</p>
+        </div>
+        <div class="col-lg-3">
+          <label>{{pageData["departmentData"].adminDeptNameHi}}</label>
+        </div>
+      </div>
+      <div class="row p-2">
+        <div class="col-lg-3">
+          <p>Department Name</p>
+        </div>
+        <div class="col-lg-3">
+          <label>{{pageData["departmentData"].departmentNameEng}}</label>
+        </div>
+        <div class="col-lg-3">
+          <p>विभाग का नाम</p>
+        </div>
+        <div class="col-lg-3">
+          <label>{{pageData["departmentData"].departmentNameHi}}</label>
+        </div>
+      </div>
+
+      <div class="row p-2">
+        <div class="col-lg-3">
+          <p>Designation of HOD</p>
+        </div>
+        <div class="col-lg-3">
+          <label>{{pageData["departmentData"].designationName}}</label>
+        </div>
+        <div class="col-lg-3">
+          <p>Expenditure Division</p>
+        </div>
+        <div class="col-lg-3">
+          <label>{{pageData["bfcUnitData"].expenditureDivName}}</label>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row mb-3 mt-2  p-2">
+        <div class="section-title aos-init aos-animate" data-aos="fade-up">
+          <p>Document Details</p>
+        </div>
+        <div class="col-md-12 form-group" *ngIf="documents.length>0">
+          <div class="table-responsive table  card">
+            <table width="100%">
+              <thead>
+                <tr>
+                  <th>Sr.No </th>
+                  <th>File Id</th>
+                  <th>File Name</th>
+                  <!-- <th>Initiator</th> -->
+                  <th>Description</th>
+                  <th>Uploaded on</th>
+                  <th id="" class="noPrint">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of documents;let i=index;">
+                  <td>{{i+1}}</td>
+                  <td>{{item.id}}</td>
+                  <td>{{[item.name]}}</td>
+                  <!-- <td>{{initiator}}</td> -->
+                  <td>{{[item.description]}}</td>
+                  <td>{{item.timeStamp|date:'mediumDate' }}<br>
+                    {{item.timeStamp|date:'mediumTime' }}
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-success btn-sm mr-2 noPrint" data-bs-toggle="modal"
+                      data-bs-target="#exampleModal">
+                      <i class="fa fa-solid fa-eye"></i>
+                    </button>
+                    <!-- <button type="button" class="btn btn-success btn-sm mr-2" download>
+                      <i class="bx bx-download"></i>
+                    </button> -->
+                    <!-- <button type="button" class="btn btn-danger btn-sm">
+                      <i class="bx bx-trash"></i>
+                    </button> -->
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+
+          </div>
+
+        </div>
+        <p *ngIf="documents.length<1">No Documents attached</p>
+      </div>
+      <hr>
+      <!-- end Documents Deatils -->
+      <div class="row p-2 mt-4 ">
+        <div class="section-title aos-init aos-animate" data-aos="fade-up">
+          <p> Remarks/Comments
+          </p>
+        </div>
+
+        <div class="col-md-12">
+
+          <form name="remarkForm" id="remarkForm" *ngIf="isActionShown" [formGroup]="remarkForm">
+
+            <div class="form-group  col-md-12 p-0">
+              <label class="col-md-1 p-0">Remarks</label>
+              <textarea id="remarks" class="form-control" formControlName="remark"></textarea>
+            </div>
+          </form>
+
+          <p class="col-md-12 ">
+            <a href="#" [ngClass]="isActionShown==true?'pull-right':'' " data-bs-toggle="modal"
+              data-bs-target="#requestHistoryModal">
+              View History
+            </a>
+          </p>
+
+          <app-suggested-remarks-chips [options]="suggestedRemarks" *ngIf="isActionShown" label="Suggested Remarks"
+            [control]="remarkForm.controls['remark']">
+          </app-suggested-remarks-chips>
+          <p *ngIf="noSuggestedRemarks" class="font-weight-bold text-danger">There was problem loading remarks.</p>
+        </div>
+
+
+      </div>
+      <hr>
+      <div class=" pb-5 pt-4" style="margin-bottom:55px;">
+
+        <span *ngFor="let button of actions" [ngClass]="{'d-none':!isActionShown}">
+          <span *ngIf="button.action == 'MODIFY'">
+            <button class="btn p-2 mr-2 noPrint" (click)="onSubmit({action:button.action})"
+              class="btn btn-warning">{{button.actionLabel}}</button>
+          </span>
+          <span *ngIf="button.action == 'FORWARD'">
+            <button class="btn p-2 mr-2 noPrint" (click)="onSubmit({action:button.action})"
+              class="btn btn-primary">Forward</button>
+          </span>
+          <span *ngIf="button.action == 'INITIATE'">
+            <button class="btn p-2 mr-2 noPrint" (click)="onSubmit({action:button.action})"
+              class="btn btn-primary">Initiate</button>
+          </span>
+          <span *ngIf="button.action == 'APPROVE'">
+            <button class="btn p-2 mr-2 noPrint" (click)="onSubmit({action:button.action})"
+              class="btn btn-success">Approve</button>
+          </span>
+          <span *ngIf="button.action == 'RETURN'">
+            <button class="btn p-2 mr-2 noPrint" (click)="onSubmit({action:button.action})"
+              class="btn btn-danger">Return</button>
+          </span>
+          <span *ngIf="button.action == 'REJECT'">
+            <button class="btn p-2 mr-2 noPrint" (click)="onSubmit({action:button.action})"
+              class="btn btn-danger">{{button.actionLabel}}</button>
+          </span>
+        </span>
+
+        <button role="button" class="btn btn-md btn-warning" (click)="backNavigation(previousPage)" name="Back Button"
+          aria-labelledby="Back Button">Back</button>
+
+        <button type="button" class="btn btn-primary btn-sm noPrint"
+          (click)="this.global.printSec('printableData')">Print</button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- remark  -->
+</section>
+
+<!-- ===================================================== -->
+
+<!-- modal  view page -->
+<!-- Button trigger modal -->
+<!-- Modal view nad modifr -->
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title section-title" id="exampleModalLabel">Document View</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <img src="assets/maine-css/img/cta-bg.jpg" alt="">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Button trigger modal -->
+
+<!-- Modal view & modify -->
+<div class="modal fade " id="requestHistoryModal" data-bs-keyboard="true" tabindex="-1"
+  aria-labelledby="Popup for Request History" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h3 class="modal-title text-lg m-3 mb-0" id="modalTitle">Request History</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body card m-2  bg-light">
+
+        <div class="table table-responsive table-hover">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th>
+                  Action</th>
+                <th>Person</th>
+                <th>Role</th>
+                <th>Level</th>
+                <th>Remarks</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let remark of remarks;">
+                <div class="row w-auto">
+                  <div class="col-lg-2">
+                    <td class=" m-0 p-0 border-0">
+                      <span *ngIf="remark.actionTaken == 'INITIATE'">
+                        <i class="fa fa-arrow-down text-primary"></i>
+                      </span>
+                      <span *ngIf="remark.actionTaken == 'FORWARD'">
+                        <i class="fa fa-arrow-down text-primary"></i>
+                      </span>
+                      <span *ngIf="remark.actionTaken == 'APPROVE'">
+                        <i class="fa fa-arrow-down text-success"></i>
+                      </span>
+                      <span *ngIf="remark.actionTaken == 'RETURN'">
+                        <i class="fa fa-arrow-down text-danger"></i>
+                      </span>
+                      <span *ngIf="remark.actionTaken == 'REJECT'">
+                        <i class="fa fa-times text-danger"></i>
+                      </span>
+                      <!-- <i [ngClass]="{'fa fa-times text-red':'RETURN',
+                        'fa fa-check-arrow-down text-success':'COMPLETE','fa fa-arrow-down text-red':'INITIATE'}"></i> -->
+                    </td>
+                  </div>
+                  <div class="col-lg-9">
+                    <!-- @ Review Comment from @Animesh   -->
+                    <!-- review and delete the code if not needed   -->
+                    <!-- ============= dont delete - option for badging ===================== -->
+                    <!-- <td class=" m-0 pe-1 p-0 border-0">
+                        <span *ngIf="remark.actionTaken == 'INITIATE'">
+                          <span class=" p-2 text-white badge badge-primary">{{remark.actionTaken}}</span>
+                        </span>
+                        <span *ngIf="remark.actionTaken == 'FORWARD'">
+                          <span class=" p-2 text-white badge badge-primary">{{remark.actionTaken}}</span>
+                        </span>
+                        <span *ngIf="remark.actionTaken == 'APPROVE'">
+                          <span class=" p-2 text-white badge badge-success">{{remark.actionTaken}}</span>
+                        </span>
+                        <span *ngIf="remark.actionTaken == 'RETURN'">
+                          <span class=" p-2 text-white badge badge-danger">{{remark.actionTaken}}</span>
+                        </span>-->
+                    <!-- ============= dont delete - option for badging ===================== -->
+                    <!-- {{remark.actionTaken}} 
+                      </td> -->
+                    <!-- @ Review Comment from @Animesh  ends  -->
+                    <!-- ORIGINAL -->
+                    <td class=" m-0 pe-1 p-0 border-0">
+                      {{remark.actionTaken}}
+                    </td>
+                    <!-- ORIGINAL END -->
+                  </div>
+                </div>
+                <td>{{remark.assigneeName}} </td>
+                <td>{{remark.roleName}} </td>
+                <td>{{remark.levelType}}</td>
+                <td>{{remark.remarks}}</td>
+                <td>{{remark.modifiedDt | date:'medium'}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-md pull-left" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

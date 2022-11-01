@@ -1,0 +1,7 @@
+export const CONSTANTS={
+    PROCESS_ID_MAKER:0,
+    PROCESS_ID_CHEKCER:1,
+    PROCESS_ID_APPROVER:2,
+
+
+}

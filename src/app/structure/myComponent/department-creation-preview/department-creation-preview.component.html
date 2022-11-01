@@ -1,0 +1,116 @@
+<section style="padding-top:35px;" id="printData">
+    <div class="container section-bg p-3 pb-5 mb-5">
+        <div class="card bg-transparent">
+
+            <div class="card-body">
+                <fieldset>
+                    <div class="section-title">
+                        <p>Department Details</p>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="departmentName" class="h6">Department Name</label>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="departmentName" class="h6">Administrative Department</label>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="departmentName" class="h6">Designation of HOD</label>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="departmentName" class="h6">Division</label>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr>
+
+                <!--fieldset 3 - document details -->
+                <fieldset>
+                    <div class="section-title">
+                        <p>Documents Details</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped border">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Sr.No</th>
+                                            <th scope="col">File Name</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td></td>
+                                            <td>
+                                            </td>
+                                            <td class="d-flex">
+                                                <button class="btn btn-sm btn-primary mx-2">
+                                                    <span class="bi bi-eye"></span>
+                                                </button>
+                                                <button class="btn btn-sm btn-success mx-2">
+                                                    <span class="bi bi-file-earmark-arrow-down"></span>
+                                                </button>
+                                                <button class="btn btn-sm btn-danger mx-2">
+                                                    <span class="bi bi-trash"></span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr>
+                <!-- fieldset 4 - remarks and commends -->
+                <fieldset>
+                    <div class="section-title">
+                        <p>Remarks / Comments</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="departmentName" class="h6">Remarks</label>
+                                <div class="border p-2 bg-gray" style="height:100px;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="">
+                        <div class="section-title mt-2">
+                            <p>Action</p>
+                        </div>
+                        <div class="">
+                            <button type="button" class="btn btn-danger noPrint"
+                                onclick="printDiv('printData')">Print</button>
+                            <button class="btn btn-success noPrint" type="submit" id="submit">Submit and e-Sign</button>
+                            <button class="btn btn-warning noPrint">Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+<section id="hero">
+    <div class="container">
+        <div class="justify-content-between">
+            <div class="row ">
+                <div class="col-md-6 col-lg-5 col-xs-12 col-sm-12 offset-md-3 login-form">
+                    <div class="main-div">
+                        <div class="panel">
+                            <h2 class="mb-0">Master Data Management </h2>
+                            <p>Please enter your details</p>
+                        </div>
+                        <form id="Login">
+                            <div class="form-group">
+                                <label for="user" class="float-left"><b>User</b></label>
+                                <select [(ngModel)]="currentUser" id="user" #user (change)="setSessionData(user.value)"
+                                    class="form-select form-select-lg mb-3" name="user">
+                                    <option selected>Select User </option>
+                                    <option *ngFor="let user of users; let i=index;" [value]="i">
+                                        {{getUserName(user,i)}} ({{getUserRole(user,i)}})</option>
+                                </select>
+                            </div>
+
+
+                            <a class="btn btn-primary mt-2 mb-0" (click)="submit()">Submit</a>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

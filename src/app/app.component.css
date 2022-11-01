@@ -1,0 +1,30 @@
+.breadcrumb {
+    z-index: 1;
+}
+
+.top-headers-2 ul {
+    float: right;
+}
+
+.top-header-2 ul:last-child {
+    border-right-color: transparent;
+}
+
+#searchField {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-bottom: 4px;
+    margin-right: 13px;
+}
+
+.mat-table {
+    width: 100% !important;
+}
+
+
+td,
+th {
+    text-align: left;
+    padding: 10px 15px !important;
+}

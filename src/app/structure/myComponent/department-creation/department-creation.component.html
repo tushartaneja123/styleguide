@@ -1,0 +1,538 @@
+<app-breadcrumb [links]="breadcrumb"></app-breadcrumb>
+<form [formGroup]="departmentCreationForm" (ngSubmit)="onSubmit(clickedbBtnName)">
+    <section>
+        <div class="container section-bg pb-5 mb-5" *ngIf="isDepartmentCreation">
+            <div class="card bg-transparent p-0">
+                <div class="card-body">
+                    <!-- fieldset 1 - Department Details -->
+                    <fieldset>
+                        <div class="section-title">
+                            <p>Department Details</p>
+                        </div>
+                        <hr>
+                        <!-- row 1 -->
+                        <div class="row mb-4">
+                            <div class="col-lg-2">
+                                <label for="adminDepartment">Administrative Department</label>
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control bg-transparent border-0 font-weight-bold"
+                                    [readonly]="isTrue" formControlName="adminDeptName">
+                                <input type="text" hidden formControlName="adminDeptId">
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="adminDepartment">प्रशासनिक विभाग </label>
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control bg-transparent border-0  font-weight-bold"
+                                    [readonly]="isTrue" formControlName="adminDeptHi">
+                            </div>
+                        </div>
+                        <!-- row 2 -->
+                        <div class="row mb-3">
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="departmentName">Department Name</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" placeholder="enter department name" class="form-control"
+                                        (blur)="compareDept($event)" (keypress)="this.global.letterSCD($event)"
+                                        formControlName="departmentName">
+                                    <div class="input-group-append" *ngIf="isShow">
+                                        <div class="input-group-text rounded-0 bg-white {{symbol}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="isCheck" class="text-danger">
+                                    Department Already Exists
+                                </div>
+                                <div *ngIf="isHindi" class="text-danger">
+                                    Hindi Characters Not Allowed
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="departmentName">विभाग का नाम</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" placeholder="विभाग का नाम हिंदी में दर्ज करें"
+                                        class="form-control lang-hindi" (keypress)="this.global.letterSpace($event)"
+                                        formControlName="departmentNameHi" (blur)="hindiValidation($event)">
+
+                                    <div class="input-group-append" *ngIf="showFeedback">
+                                        <div class="input-group-text rounded-0 bg-white {{symbol}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="noHindiTextError" class="text-danger">कृपया केवल हिंदी अक्षर दर्ज करें।
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="designationOfHod">Designation of HOD</label>
+                                </div>
+                            </div>
+
+                            <!-- =============  select search ============= -->
+                            <div class="col-lg-4">
+                                <!-- <input type="text"  [formControl]="myControl" [matAutocomplete]="auto"
+class="form-select ex" placeholder="search hod designation"
+(blur)="getValue($event)" >
+<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"  >
+<mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+    {{option}}
+</mat-option>
+</mat-autocomplete> -->
+
+
+                                <!-- <pre class="card card-block card-header mb-3">Model: {{selected | json}}</pre>  -->
+                                <input [typeahead]="options" class="form-select" (blur)="getValue($event)"
+                                    formControlName="designationOfHod" placeholder="search hod designation">
+
+                            </div>
+                            <!-- ============= select search ============= -->
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="divisionType">Expenditure Division</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <select class="form-select" formControlName="bfcDivisionIdNumber">
+                                    <option value="" selected>Select Expenditure Division name</option>
+                                    <option *ngFor="let item of bfcDivName" [value]="item.bfcDivisionId">
+                                        {{item.bfcDivisionNameEnglish}}
+                                    </option>
+                                </select>
+                                <div *ngFor="let user of bfcDivName">
+                                    <div *ngIf="user.bfcDivisionId == this.departmentCreationForm.controls['bfcDivisionIdNumber'].value"
+                                        class="">
+                                        <input type="text" [(ngModel)]="user.bfcDivisionNameEnglish"
+                                            formControlName="bfcDivisionNameEn" hidden>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <!-- 
+
+commented section here bco details
+
+-->
+                    <!-- fieldset 4 - Documents -->
+                    <fieldset>
+                        <div class="section-title">
+                            <p>Documents</p>
+                        </div>
+                        <hr>
+                        <!-- row 1 -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="descriptions">Descriptions</label>
+                                    <select placeholder="enter descriptions" class="form-select"
+                                        formControlName="docDescription">
+                                        <option selected="selected" value="default"> Select Document Type</option>
+                                        <option *ngFor="let desc of documentTypes" value={{desc.documentNmEng}}>
+                                            {{desc.description}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="adminDepartment">Upload Documents</label>
+                                    <input type="file" class="file-button  form-control"
+                                        formControlName="uploadDocument" (change)="onSelectFile($event)">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row 2 : table Documents details -->
+                        <div class="row">
+                            <div class="col-lg-12" *ngIf="isTableActive">
+                                <div class="table-responsive">
+                                    <table class="table table-striped border">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Sr.No</th>
+                                                <th scope="col">Document Id</th>
+                                                <th scope="col">File Name</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let document of documents;let i=index;">
+                                                <td scope="row">{{i+1}}</td>
+                                                <td>{{document.id}}</td>
+                                                <td>{{document.name}}</td>
+                                                <td>{{document.description}}
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-success mx-2" type="button">
+                                                        <span class="bi bi-file-earmark-arrow-down"></span>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-danger mx-2">
+                                                        <span class="bi bi-trash" (click)="deleteFile(i)"></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <div class="section-title">
+                            <p>Remarks/Comments</p>
+                        </div>
+                        <hr>
+                        <!-- row 1 -->
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-1">Remarks</div>
+                            <div class="col-lg-10">
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3" placeholder="enter remarks here"
+                                        formControlName="remarks"></textarea>
+                                    <p class="float-right" *ngIf="showPreviousRemarksLink"> <a href="#"
+                                            data-bs-toggle="modal" data-bs-target="#requestHistoryModal">View
+                                            History</a>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <label class="form-control-label">Suggested Remarks</label>
+
+                            <mat-chip-list aria-label="Default Remarks List for entering">
+                                <mat-chip (click)="setRemark(r)" *ngFor="let r of suggestedRemarks "
+                                    ariaSelected="The selected remark is r">
+                                    {{r}}
+                                </mat-chip>
+                            </mat-chip-list>
+
+                            <p *ngIf="noSuggestedRemarks" class="font-weight-bold text-danger">There was problem loading
+                                remark
+                                suggestions.
+                            </p>
+                        </div>
+                    </fieldset>
+                    <br>
+                </div>
+
+                <fieldset>
+                    <div class="card-footer">
+                        <br>
+                        <!-- <div class="section-title mb-0 pb-0">
+<p>Action</p>
+</div> -->
+
+                        <button class="btn btn-primary m-1" type="submit" id="draft" (click)="onBtnClick($event)">Save
+                            as Draft</button>
+                        <button class="btn btn-warning m-1" type="button" id="preview"
+                            (click)="onPreviewBtnClick()">Preview</button>
+                        <button *ngIf="!isActionAvailable" class="btn btn-success  m-1" type="submit" id="submit"
+                            (click)="onBtnClick($event)" [disabled]="departmentCreationForm.invalid">Submit</button>
+
+
+                        <div class="d-inline" *ngFor="let button of actions;">
+                            <button (click)="onBtnClick($event)" class="btn btn-success  m-1"
+                                *ngIf="button.actionLabel!=='MODIFY'" id="{{button.action}}" type="submit"
+                                [disabled]="departmentCreationForm.invalid">{{button.actionLabel}}</button>
+                        </div>
+                        <button class="btn btn-danger m-1" type="button" routerLink="/Main">Back</button>
+                    </div>
+                </fieldset>
+                <br>
+                <div class="col-md-12">Note: Submit button will be enabled once all the details are filled.</div>
+            </div>
+        </div>
+    </section>
+
+    <!--===================== preview data =============================-->
+
+    <section *ngIf="isPreview" class="mb-5 pb-5">
+        <div class="container section-bg p-3 pb-5 mb-7">
+            <div class="card bg-transparent">
+
+                <div class="card-body" id="printData">
+                    <fieldset>
+                        <div class="section-title">
+                            <p>Department Details</p>
+                        </div>
+                        <hr>
+                        <div class="row mb-3">
+                            <div class="col-lg-2">
+                                <label for="departmentName">Administrative Department</label>
+                            </div>
+                            <div class="col-lg-4 pt-1">
+                                <div class="h6">{{this.departmentCreationForm.controls['adminDeptName'].value}}</div>
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="departmentName">प्रशासनिक विभाग</label>
+                            </div>
+                            <div class="col-lg-4 pt-1">
+                                <div class="h6">{{this.departmentCreationForm.controls['adminDeptHi'].value}}</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-2">
+                                <label for="departmentName">Department Name</label>
+                            </div>
+                            <div class="col-lg-4 pt-1">
+                                <div class="h6">{{this.departmentCreationForm.controls['departmentName'].value}}</div>
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="departmentName">विभाग का नाम</label>
+                            </div>
+                            <div class="col-lg-4 pt-1">
+                                <div class="h6">{{this.departmentCreationForm.controls['departmentNameHi'].value}}</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-2">
+                                <label for="departmentName">Designation of HOD</label>
+                            </div>
+                            <div class="col-lg-4 pt-1">
+                                <div>
+                                    <div class="h6">{{desgHodName}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="departmentName">Division</label>
+                            </div>
+                            <div class="col-lg-4 pt-1">
+                                <div class="h6">{{this.departmentCreationForm.controls['bfcDivisionNameEn'].value}}
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <!--fieldset 3 - document details -->
+                    <fieldset>
+                        <div class="section-title">
+                            <p>Documents Details</p>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="table-responsive" *ngIf="isTableActive">
+                                    <table class="table table-striped border">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Sr.No</th>
+                                                <th scope="col">Document Id</th>
+                                                <th scope="col">File Name</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let document of documents;let i=index;">
+                                                <td scope="row">{{i+1}}</td>
+                                                <td>{{document.id}}</td>
+                                                <td>{{document.name}}</td>
+                                                <td>{{document.description}}
+                                                </td>
+                                                <td>
+
+                                                    <button class="btn btn-sm btn-success mx-2" type="button">
+                                                        <span class="bi bi-file-earmark-arrow-down"></span>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-danger mx-2">
+                                                        <span class="bi bi-trash" id="" (click)="deleteFile(i)"></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="!isTableActive">
+                            <div class="col-lg-12">
+
+                                No Documents Selected
+                                <br>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <!-- fieldset 4 - remarks and commends -->
+                    <fieldset>
+                        <div class="section-title">
+                            <p>Remarks / Comments</p>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-1">
+                                <label for="departmentName">Remarks</label>
+                            </div>
+                            <div class="col-lg-11">
+                                <div class="form-group">
+                                    <div class="border p-2 bg-white" style="height:100px;">
+                                        {{this.departmentCreationForm.controls['remarks'].value}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <fieldset>
+                    <div class="card-footer">
+                        <!-- <div class="section-title mt-2">
+<p>Action</p>
+</div> -->
+                        <div class="row noPrint">
+                            <div class="col-lg-12 ">
+
+                                <button type="button" class="btn btn-danger noPrint"
+                                    onclick="printDiv('printData')">Print</button>
+
+                                <button class="btn btn-success" type="submit" id="submit" (click)="onBtnClick($event)"
+                                    [disabled]="departmentCreationForm.invalid">Submit and e-Sign</button>
+                                <button class="btn btn-success  m-1" type="submit" id="submit"
+                                    *ngFor="let button of actions" (click)="onSubmit(button.action)"
+                                    [disabled]="departmentCreationForm.invalid">{{button.actionLabel}}</button>
+                                <button class="btn btn-warning" (click)="onPreviewBtnClick()">Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+</form>
+
+
+
+
+<!-- modal  view page -->
+<!-- Button trigger modal -->
+<!-- Modal view nad modifr -->
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title section-title" id="exampleModalLabel">Document View</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <img src="assets/maine-css/img/cta-bg.jpg" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Button trigger modal -->
+
+<!-- Modal view & modify -->
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title section-title" id="exampleModalLabel">Document View</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <img src="assets/maine-css/img/cta-bg.jpg" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Button trigger modal -->
+
+<!-- Modal view & modify -->
+<div class="modal fade " id="requestHistoryModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h3 class="modal-title text-lg m-3 mb-0" id="requestHistoryTitle">Request History</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body card m-2  bg-light">
+
+                <div class="table ">
+                    <table class="table table-responsive table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Action</th>
+                                <th>Person</th>
+                                <th>Role</th>
+                                <th>Level</th>
+                                <th>Remarks</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let remark of remarks;">
+                                <div class="row w-auto">
+                                    <div class="col-lg-2">
+                                        <td class=" m-0 p-0 border-0">
+                                            <span *ngIf="remark.actionTaken == 'INITIATE'">
+                                                <i class="fa fa-arrow-down text-primary"></i>
+                                            </span>
+                                            <span *ngIf="remark.actionTaken == 'FORWARD'">
+                                                <i class="fa fa-arrow-down text-primary"></i>
+                                            </span>
+                                            <span *ngIf="remark.actionTaken == 'APPROVE'">
+                                                <i class="fa fa-arrow-down text-success"></i>
+                                            </span>
+                                            <span *ngIf="remark.actionTaken == 'RETURN'">
+                                                <i class="fa fa-arrow-down text-danger"></i>
+                                            </span>
+                                            <span *ngIf="remark.actionTaken == 'REJECT'">
+                                                <i class="fa fa-times text-danger"></i>
+                                            </span>
+                                            <!-- <i [ngClass]="{'fa fa-times text-red':'RETURN',
+                        'fa fa-check-arrow-down text-success':'COMPLETE','fa fa-arrow-down text-red':'INITIATE'}"></i> -->
+                                        </td>
+                                    </div>
+                                    <div class="col-lg-9">
+
+                                        <!-- ORIGINAL -->
+                                        <td class=" m-0 pe-1 p-0 border-0">
+                                            {{remark.actionTaken}}
+                                        </td>
+                                        <!-- ORIGINAL END -->
+                                    </div>
+                                </div>
+                                <td>{{remark.assigneeName}} </td>
+                                <td>{{remark.roleName}} </td>
+                                <td>{{remark.levelType}}</td>
+                                <td>{{remark.remarks}}</td>
+                                <td>{{remark.modifiedDt | date:'medium'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-md pull-left" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
